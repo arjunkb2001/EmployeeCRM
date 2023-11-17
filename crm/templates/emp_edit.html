@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block body_block%}
+
+<h1>Change Your Details</h1>
+<div class="container ">
+    <form action="" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit">
+            Update
+        </button>
+        <button class="bg-danger " type="submit"><a href="{%url 'home'%}">Back</a></button>
+    </form>
+</div>
+{%endblock%}
