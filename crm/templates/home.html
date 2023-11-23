@@ -1,69 +1,66 @@
-{%load static%}
-
 <!DOCTYPE html>
+{%load static%}
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{%static 'css/style.css'%}">
+        
 </head>
-<style>
-  body {
-    background-color: rgb(142, 152, 152)
-  }
-</style>
 
 <body>
-  <!--  -->
-  <nav class="navbar navbar-expand-lg bg-white">
-    <div class="container">
-      <a class="navbar-brand" href="#"><b>Employee CRM</b></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active fw-bolder" aria-current="page" href="#"><strong>Home</strong></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{%url 'emp-add'%}">Add Employe</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{%url 'emplist'%}">List Of Employee</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{%url 'reg'%}">Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{%url 'login'%}">Login</a>
-          </li>
-          <li>
-            <form class="d-flex" role="search" method="post">
-              {%csrf_token%}
-              <input class="form-control me-2" name="boxs">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{%url 'signout'%}"><strong>Logout</strong></a>
-        </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!--  -->
+    <nav class="navbar navbar-expand-lg bg-dark-subtle text-dark fw-bold">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Employee CRM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{%url 'home'%}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'emp-add'%}">Add Employee</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{%url 'emplist'%}"><strong>Employee
+                                List</strong></a>
+                    </li>
+                <li>
+                    <form class="d-flex" role="search">
+                        {%csrf_token%}
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{%url 'signout'%}">Logout</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <!-- <div class="d-grid d-flex  col-md-8 col-lg-7 col-xl-6">
-    
-      <img src="{%static 'photo/opps.jpg'%}" class="img-fluid"
-    alt="Sample image">
-    
-  </div> -->
+
+    <img src="{%static 'photo/emp2.jpg'%}" alt="" style="width: 100%;">
+
+    {%block body_block%}
+
+    {%endblock%}
 </body>
 
 </html>
+

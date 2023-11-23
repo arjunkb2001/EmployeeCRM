@@ -21,11 +21,6 @@ def signin_required(fn):
 
 # Create your views here.
 
-class IndexView(View):
-    def get(self,request,*args,**kwargs):
-        return render(request,"index.html")
-
-
 class HomeView(View):
     def get(self,request,*args,**kwargs):
         return render(request,"home.html")
